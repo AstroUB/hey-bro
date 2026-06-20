@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { z } from "zod";
 import {
   ArrowRight,
   Eye,
@@ -84,11 +83,6 @@ const accentTokens = {
   muted: { bg: "bg-zinc-800/30", ring: "ring-zinc-700/40", text: "text-zinc-500" },
 };
 
-const interestSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Enter a valid email").max(255),
-  program: z.enum(["neuroscience", "ai", "semiconductors", "other"]),
-});
 
 export default function Landing() {
   return (
